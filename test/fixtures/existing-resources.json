@@ -1,0 +1,8 @@
+{
+  "the/output/key.js": [
+    "test/fixtures/files/script.js"
+  ],
+  "the/output/key2.js": [
+    "test/fixtures/files/styles.css"
+  ]
+}

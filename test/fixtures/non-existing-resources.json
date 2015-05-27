@@ -1,0 +1,10 @@
+{
+  "the/output/key.js": [
+    "non/existing/file1.js",
+    "non/existing/file2.js"
+  ],
+  "the/output/key2.js": [
+    "other/non/existing/resource1.js",
+    "other/non/existing/resource2.js"
+  ]
+}
