@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         var reportMissingFile = function (filename) {
 
             haveFailed = true;
-            grunt.log.error("File '" + filename + "' is missing...");
+            grunt.log.error("File '" + filename + "' is missing.");
         };
 
         var checkFileExists = function (filename) {
@@ -43,14 +43,20 @@ module.exports = function (grunt) {
 
                 if (this.data.hasOwnProperty(destination)) {
 
-                    this.data[destination].forEach(checkFileExists());
+                    this.data[destination].forEach(checkFileExists);
                 }
             }
+        } else {
+
+            grunt.fail.fatal("Non-supported argument type. Please use Arrays or JSON Objects", 1);
         }
 
         if (haveFailed) {
 
-            grunt.fail.fatal("Some files are missing. Be nice and fix 'em", 3);
+            grunt.fail.fatal("Some files are missing. Be nice and fix 'em.", 3);
+        } else {
+
+            grunt.log.oklns("All files present for '" + this.target + "'.");
         }
     });
 };
