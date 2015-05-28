@@ -1,6 +1,6 @@
 {
   "name": "grunt-check-exists",
-  "description": "making sure files exist",
+  "description": "A way to be sure files exist",
   "version": "0.1.0",
   "homepage": "https://github.com/BrightTALK/grunt-check-exists",
   "author": {
@@ -36,6 +36,8 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "file checking",
+    "files exist"
   ]
 }
