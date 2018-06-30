@@ -1,0 +1,60 @@
+This is Kali Linux's main package repository: http://http.kali.org/
+
+Kali Linux, the most advanced penetration testing distribution, ever.
+http://www.kali.org
+$bash
+sh
+export
+su
+make new file
+busybox su download
+$ sudo adduser --disabled-password archvsync
+Adding user 'archvsync' ...
+[...]
+Is the information correct$ mkdir -p .ssh
+$ wget -O - -q http://archive.kali.org/pushmirror.pub >>.ssh/authorized_keys? [Y/n]
+$ sudo mkdir /srv/mirrors/kali{,-images}
+$ sudo chown archvsync:archvsync /srv/mirrors/kali{,-images}$ sudo sed -i -e "s/RSYNC_ENABLE=false/RSYNC_ENABLE=true/" /etc/default/rsync
+$ sudo vim /etc/rsyncd.conf
+$ cat /etc/rsyncd.conf
+uid = nobody
+gid = nogroup
+max connections = 25
+socket options = SO_KEEPALIVE
+$ cp etc/ftpsync.conf.sample etc/ftpsync-kali.conf
+$ vim etc/ftpsync-kali.conf
+$ grep -E '^[^#]' etc/ftpsync-kali.conf
+MIRRORNAME$ rsync -qaH archive-4.kali.org::kali /srv/mirrors/kali/ &
+$ rsync -qaH archive-4.kali.org::kali-images /srv/mirrors/kali-images/ &=`hostname -f`
+TO="/srv/mirrors/kali/"
+RSYNC_PATH="kali"
+RSYNC_HOST=archive.kali.org
+[kali]
+path = /srv/mirrors/kali
+comment = The Kali Archive
+read only = true
+
+[kali-images]
+path =$ sudo su - archvsync
+$ wget http://archive.kali.org/ftpsync.tar.gz
+$ tar zxf$ sudo su - archvsync
+$ cp etc/mirror-kali-images.conf.sample etc/mirror-kali-images.conf
+$ vim etc/mirror-kali-images.conf
+$ grep -E '^[^#]' etc/mirror-kali-images.conf
+TO=/srv/mirrors/kali-images/
+$ crontab -eThis is Kali Linux's main package repository: http://http.kali.org/
+
+Kali Linux, the most advanced penetration testing distribution, ever.
+http://www.kali.org
+This is Kali Linux's main package repository: http://http.kali.org/
+
+Kali Linux, the most advanced penetration testing distribution, ever.
+http://www.kali.org
+
+$ crontab -l
+# m h dom mon dow command
+39 3 * * * ~/bin/mirror-kali-images ftpsync.tar.gz /srv/mirrors/kali-images
+comment = The Kali ISO images
+read only = true
+$ sudo service rsync start
+Starting rsync daemon: rsync.
